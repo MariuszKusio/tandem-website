@@ -1,0 +1,1511 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* FONTS */
+/*
+font-family: "Saira", sans-serif;
+font-family: "Saira Condensed", sans-serif;
+font-family: "Montserrat", sans-serif;
+*/
+
+h1 {
+    cursor: default;
+}
+
+h2 {
+    cursor: default;
+}
+
+h3 {
+    cursor: default;
+}
+
+h4 {
+    cursor: default;
+}
+
+p {
+    cursor: default;
+}
+
+/* BOOKING BUTTON */
+
+div.bookingbtn {
+    z-index: 1;
+    display: block;
+    position: fixed;
+    height: 60px;
+    width: 60px;
+    background-color: dimgray;
+    bottom: 30px;
+    right: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bookingbtn .textbooking {
+    opacity: 0;
+    color: white;
+    font-weight: 500;
+    background-color: rgb(190, 190, 190);
+    position: absolute;
+    bottom: 55px;
+    right: -19px;
+    text-transform: uppercase;
+    font-family: saira;
+    font-size: 13px;
+    padding: 4px 9px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.bookingbtn .textbooking::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    height: 8px;
+    width: 8px;
+    background-color: rgb(190, 190, 190);
+    transform: translate(-50%) rotate(45deg);
+    transition: 0.5s;
+}
+
+.bookingbtn .fa-solid {
+    position: absolute;
+    left: 18px;
+    color: white;
+    align-items: center;
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    transition: 0.3s;
+/*
+    -webkit-animation: vibrate 2s cubic-bezier(.36, .07, .19, .97) infinite;
+    animation: vibrate 2s cubic-bezier(.36, .07, .19, .97) infinite;
+*/
+}
+
+div.bookingbtn:hover .fa-solid {
+  -webkit-animation: vibrate 2s cubic-bezier(.36, .07, .19, .97) infinite;
+    animation: vibrate 2s cubic-bezier(.36, .07, .19, .97) infinite;
+}
+
+
+@keyframes vibrate {
+
+    0%,
+    2%,
+    4%,
+    6%,
+    8%,
+    10%,
+    12%,
+    14%,
+    16%,
+    18% {
+        -webkit-transform: translate3d(-2px, 0, 0);
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    1%,
+    3%,
+    5%,
+    7%,
+    9%,
+    11%,
+    13%,
+    15%,
+    17%,
+    19% {
+        -webkit-transform: translate3d(1px, 0, 0);
+        transform: translate3d(1px, 0, 0);
+    }
+
+    20%,
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+div.bookingbtn a img {
+    height: 0px;
+
+}
+
+div.bookingbtn:hover {
+    background-color: rgb(190, 190, 190);
+}
+
+div.bookingbtn:hover .textbooking {
+    opacity: 1;
+    bottom: 70px;
+    color: black;
+
+}
+
+div.bookingbtn:hover .fa-solid {
+    color: black;
+    font-size: 32px;
+    left: 15px;
+}
+
+div.bookingbtn {
+    cursor: pointer;
+}
+
+
+/* RESOISUVE BOOKING BUTTON */
+
+@media (max-width: 400px) {
+    div.bookingbtn {
+        height: 60px;
+        width: 60px;
+        bottom: 25px;
+        right: 25px;
+    }
+
+  
+  
+/*
+    div.bookingbtn:hover .textbooking {
+        display: none;
+    }
+*/
+  
+}
+
+
+/* HEADER */
+
+header {
+    background-image: url(tandemimg/tandemheaderbgchres.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+header div.wrapblack {
+    height: 100vh;
+    background-color: rgba(1, 1, 1, .52);
+}
+
+header nav {
+    z-index: 1;
+    position: absolute; 
+    min-height: 80px;
+    height: 7vh;
+    width: 100%;
+}
+
+header div.logo {
+    position: absolute;
+    margin-top: 16px;
+    margin-left: 45px;
+}
+
+header ul.navbtns {
+    position: absolute;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 15px;
+    right: 30px;
+}
+
+header ul li {
+    display: block;
+    float: left;
+    margin: auto 20px;
+    line-height: 6vh;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgb(46, 46, 46);
+}
+
+header ul li a {
+    text-decoration: none;
+    color: rgb(243, 243, 243);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    padding: 10px 40px 10px 40px;
+    border: solid white;
+    border-width: 2px;
+    border-color: transparent;
+    transition: 0.1s;
+}
+
+header ul li a:hover {
+    border-color: white;
+}
+
+
+
+/* SCROLL ARROW */
+
+
+
+header .arrowtext {
+    position: absolute;
+    width: 100%;
+    bottom: 110px;
+    left: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 12px;
+    font-family: Roboto, sans-serif;
+    text-transform: uppercase;
+    -webkit-animation: animateopacity 1s infinite alternate-reverse both;
+    animation: animateopacity 1s infinite alternate-reverse both;
+
+}
+
+@-webkit-keyframes animateopacity {
+    from {
+        opacity: 0.6;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+header .arrow {
+    display: block;
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1%;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    padding: 14px;
+    -webkit-animation: animate 1s infinite alternate-reverse both;
+    animation: animate 1s infinite alternate-reverse both;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+
+
+@-webkit-keyframes animate {
+    from {
+        bottom: 80px;
+    }
+
+    to {
+        bottom: 40px;
+    }
+}
+
+
+
+/* RESPONSIVE HEADER */
+
+
+@media (max-width: 1400px) {
+
+    header {
+        background-position: right;
+    }
+
+    header nav {
+        min-height: 57px;
+        height: 6vh;
+    }
+
+    header div.logo {
+        margin-top: 22px;
+    }
+
+    header div.logo img {
+        height: 45px;
+    }
+
+    header ul li {
+        margin: 0 20px;
+        font-size: 26px;
+    }
+
+
+}
+
+@media (max-width: 1060px) {
+
+    header div.logo img {
+        height: 40px;
+        margin-top: 10px;
+    }
+
+    header ul li {
+        margin: 0 10px;
+        font-size: 22px;
+    }
+  
+  header ul.navbtns {
+    top: 13px;
+    right: 10px;
+}
+}
+
+@media (max-width: 1060px) and (orientation:landscape) {
+  
+  header div.logo img {
+        margin-top:0px;
+    }
+  header ul.navbtns {
+    top: 20px;
+    right: 10px;
+}
+}
+
+
+@media (max-width: 930px) and (orientation:landscape) {
+  header ul.navbtns {
+    top: 35px;
+    right: 5px;
+}
+  
+}
+
+@media (max-width: 800px) {
+  header div.logo img {
+        height: 35px;
+    }
+
+    header ul li {
+        margin: 0px;
+        font-size: 18px;
+    }
+  
+    header ul.navbtns {
+    top: 18px;
+}
+  
+}
+
+
+@media (max-width: 650px) {
+  
+  header div.logo img {
+      margin-top:15px;
+    }
+
+    header ul li {  
+        font-size: 16px;
+    }
+  
+    header ul.navbtns {
+    top: 14px;
+}
+  
+  header ul li a {
+    padding: 10px 25px 10px 25px;
+   
+}
+}
+
+@media (max-width: 550px) {
+  header div.logo {
+    position: absolute;
+    width: 100%;
+    margin: auto auto;
+  }
+  header div.logo img {
+      position: absolute;
+      height: 50px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+  
+  
+  header ul.navbtns {
+    top: 120px;
+    right:0px;
+}
+
+header ul li {
+    display: block;
+    width: 100%;
+    float: left;
+    margin: auto 0px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 32px;
+}
+  
+  header ul li a:hover {
+    border-color: transparent;
+    color: darkgrey;
+}
+   
+}
+
+@media (max-width: 400px) {
+    header div.wrapblack {
+        background-color: rgba(1, 1, 1, .5);
+    }
+
+    header {
+        background-position: right;
+    }
+
+    header nav {
+        min-height: 80px;
+        height: 8vh;
+    }
+
+    
+
+    header div.logo img {
+        height: 55px;
+    }
+
+  
+    header nav {
+        position: static;
+
+    }
+
+}
+
+
+/* SCETION ABOUT */
+
+section.about h1 {
+    display: block;
+    font-size: 38px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    /*    font-family: Saira, sans-serif;*/
+    font-style: normal;
+    margin: 18px auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(46, 46, 46);
+
+}
+
+section.about div.description {
+    padding: 80px;
+    font-size: 18px;
+    font-family: arial, sans-serif;
+    background-color: rgb(243, 243, 243);
+
+}
+
+section.about div.description h3 {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-family: Saira, sans-serif;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+
+section.about div.description p {
+    display: block;
+    padding: 5px 120px;
+    text-align: center;
+    max-width: 1600px;
+    margin: 0px auto;
+
+}
+
+section.about div.description .italic {
+    font-style: italic;
+    margin-top: 50px;
+}
+
+/* RESPONSIVE ABOUT */
+
+
+
+@media (max-width: 1400px) {
+
+    section.about h1 {
+        font-size: 34px;
+    }
+
+    section.about div.description h3 {
+        font-size: 26px;
+    }
+
+    section.about div.description {
+        padding: 50px;
+        font-size: 16px;
+    }
+
+    section.about div.description p {
+        padding: 5px 80px;
+    }
+
+}
+
+@media (max-width: 1060px) {
+    section.about h1 {
+        margin: 14px auto;
+        font-size: 30px;
+    }
+
+    section.about div.description p {
+        padding: 5px 30px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    section.about div.description h3 {
+        margin-top: 40px;
+    }
+
+    section.about div.description {
+        padding: 30px;
+        font-size: 16px;
+    }
+
+    section.about div.description p {
+        padding: 5px 0px;
+    }
+}
+
+/* SECTION BARBERS */
+
+section.barbers {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+section.barbers h1 {
+    display: block;
+    font-size: 38px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin: 18px auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(46, 46, 46);
+}
+
+
+
+.barberimg,
+.barberdescription {
+    width: 50%;
+    float: left;
+    height: 40vh;
+    overflow: hidden;
+}
+
+
+.barberpart .barberimg {
+    position: relative;
+    border-image-repeat: norepeat;
+    transition: 0.5s;
+
+}
+
+.barberpart .barberimg img {
+    object-fit: cover;
+    width: 100%;
+    height: 40vh;
+}
+
+.barberpart .barberimg .cover {
+    object-position: top;
+}
+
+.barberimg:hover {
+    filter: grayscale(100%);
+
+}
+
+.barbers .barberpart:nth-of-type(even) .barberimg {
+    float: right;
+}
+
+
+section.barbers div button {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    /*    border-bottom: 3px solid white;*/
+    cursor: pointer;
+    font-family: "Saira Condensed", sans-serif;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+section.barbers div.frame {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: solid white;
+    border-width: 0 0px 3px 0;
+    bottom: 0px;
+    right: 28px;
+    transition: 0.3s;
+}
+
+
+
+section.barbers div button:hover div.frame {
+    transform: rotate(45deg);
+    border-width: 0 0px 3px 0;
+    width: 30px;
+    height: 30px;
+    right: 60px;
+}
+
+section.barbers div.frame2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: solid white;
+    border-width: 0 0px 3px 0;
+    bottom: 0px;
+    right: 28px;
+    transition: 0.3s;
+}
+
+section.barbers div button:hover div.frame2 {
+    transform: rotate(-45deg);
+    border-width: 0px 0px 3px 0px;
+    width: 30px;
+    height: 30px;
+    right: 60px;
+
+}
+
+section.barbers div button:hover {
+    padding-bottom: 15px;
+}
+
+section.barbers div.barberdescription {
+    height: 40vh;
+    width: 50%;
+    float: left;
+    background-color: rgb(243, 243, 243);
+    padding: 35px 40px;
+    font-size: 18px;
+    font-family: arial, sans-serif;
+    overflow: hidden;
+}
+
+.barbers h3 {
+    font-family: Saira, sans-serif;
+    text-transform: uppercase;
+    font-size: 28px;
+    padding: 10px 0px 30px 0px;
+    letter-spacing: 2px;
+}
+
+.barbergalery {
+    display: flex;
+    flex-flow: wrap;
+    width: 95%;
+    height: 0px;
+    margin: 0 auto;
+    overflow-y: auto;
+    transition: 0.6s;
+    box-shadow: 0px -19px 20px -19px rgba(0,0,0,0.45) inset,
+    0px 25px 20px -20px rgba(0,0,0,0.45);
+}
+
+.barbergalery::-webkit-scrollbar {
+    display: none;
+}
+
+
+.gallery-itemimg {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.gallery-itemimg:hover {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+
+.barbergalery .styleimg1 {
+    flex-grow: 1;
+    position: relative;
+    min-width: 150px;
+    border: 16px solid #fff;
+    height: 500px;
+    width: 48%;
+    background-color: white;
+}
+
+.barbergalery .styleimg1:before {
+    content: "";
+    padding-top: 100%;
+    display: block;
+}
+
+
+
+
+
+
+/* RESPONSIVE BARBERS */
+
+
+
+@media (max-width: 1400px) {
+
+    section.barbers h1 {
+        font-size: 34px;
+    }
+
+    .barbers h3 {
+        font-size: 26px;
+    }
+
+    section.barbers div.barberdescription {
+
+        font-size: 18px;
+
+    }
+}
+
+@media (max-width: 1060px) {
+    section.barbers h1 {
+        margin: 14px auto;
+        font-size: 30px;
+    }
+
+    .barbers h3 {
+        font-size: 26px;
+        padding: 0px 0px 20px 0px;
+    }
+
+    section.barbers div.barberdescription {
+
+        font-size: 18px;
+        padding: 30px 40px;
+
+    }
+}
+  
+@media (max-width: 1060px) and (orientation:landscape) {
+    section.barbers div.barberdescription {
+        font-size: 16px;
+        padding: 20px 30px;
+    }
+}
+
+
+@media (max-width: 930px) and (orientation:landscape) {
+  
+  .barbers h3 {
+        font-size: 24px;
+        padding: 0px 0px 14px 0px;
+    }
+  
+  section.barbers div.barberdescription {
+        font-size: 14px;
+    }
+  
+  section.barbers div.barberdescription {
+    height: 70vh;
+  }
+  
+  .barberimg,
+.barberdescription {
+  
+    height: 70vh;
+    
+}
+
+
+.barberpart .barberimg img {
+   
+    height: 70vh;
+}
+  
+   .barbergalery .styleimg1 { 
+    height: 300px;  
+}
+  
+}
+
+
+@media (max-width: 800px) {
+  section.barbers div.barberdescription {
+        font-size: 16px;
+        padding: 20px 30px;
+    }
+  
+}
+
+@media (max-width: 650px) {
+  section.barbers div.barberdescription {
+        font-size: 14px;
+        padding: 20px 25px;
+    }
+  .barbers h3 {
+        font-size: 23px;
+        padding: 0px 0px 15px 0px;
+    }
+  
+  
+  
+  section.barbers div button {
+    bottom: 22px;
+    right: 20px;
+    font-size: 25px;
+}
+
+section.barbers div.frame {
+    right: 14px; 
+}
+
+  section.barbers div.frame2 {
+    right: 14px;
+}
+
+section.barbers div button:hover div.frame { 
+    right: 53px;
+}
+
+section.barbers div button:hover div.frame2 {
+    right: 53px;
+}
+  
+  .barbergalery .styleimg1 { 
+    height: 300px;  
+}
+
+}
+
+@media (max-width: 550px) {
+  .barbers .barberpart:nth-of-type(even) .barberimg {
+        float: left;
+    }
+  .barbers .barberpart .barberimg {
+        width: 100%;
+    }
+  section.barbers div.barberdescription {  
+        width: 100%;
+      font-size: 15px;
+        padding: 25px 35px;
+    }
+  
+  .barbers h3 {
+        font-size: 25px;
+        padding: 0px 0px 18px 0px;
+    }
+  
+}
+
+
+@media (max-width: 440px) {
+
+section.barbers div.barberdescription {  
+        
+      font-size: 14px;
+        padding: 20px 30px;
+    }
+  
+  
+}
+
+
+@media (max-width: 390px) {
+  
+  section.barbers div.barberdescription {  
+        
+      font-size: 13px;
+        
+    }
+  
+  .barbers h3 {
+        font-size: 23px;
+        padding: 0px 0px 10px 0px;
+    }
+}
+
+/* SECTION PRICELIST */
+
+
+
+section.pricelist h1 {
+    width: 100%;
+    display: block;
+    font-size: 38px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin: 18px auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(46, 46, 46);
+}
+
+section.pricelist div.wrapblack {
+    height: 80vh;
+    width: 100%;
+    max-height: 580px;
+    max-width: 900px;
+    margin: 0px auto;
+    background-color: rgba(1, 1, 1, .75);
+}
+
+section.pricelist div.wrap {
+    height: 80vh;
+    width: 100%;
+    max-height: 580px;
+    max-width: 900px;
+    margin: 0px auto;
+    background-image:
+        url(tandemimg/pricelistbgc.jpg);
+    background-position: center;
+    overflow: hidden;
+}
+
+div.column p {
+    display: block;
+    color: white;
+    font-size: 32px;
+    font-family: "Saira", sans-serif;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+section.pricelist .row {
+    padding-top: 80px;
+    margin: auto auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.column1 {
+    height: 100%;
+}
+
+.column2 {
+    height: 100%;
+}
+
+
+/* RESPONSIVE PRICELIST */
+
+
+
+@media (max-width: 1400px) {
+    section.pricelist h1 {
+        font-size: 34px;
+    }
+
+}
+
+@media (max-width: 1060px) {
+    section.pricelist h1 {
+        margin: 14px auto;
+        font-size: 30px;
+
+    }
+
+    div.column p {
+        font-size: 26px;
+        margin-bottom: 55px;
+    }
+}
+
+@media (max-width: 930px) and (orientation:landscape) {
+  section.pricelist div.wrapblack {
+    height: 1100vh;
+    max-height: 700px;
+    max-width: 900px;
+   
+}
+
+section.pricelist div.wrap {
+    height: 110vh;
+    width: 60%;
+    max-height: 700px;
+    max-width: 900px;
+    
+}
+  
+  
+  section.pricelist .row {
+    padding-top: 65px;
+  }
+  
+  div.column p {
+        font-size: 19px;
+        margin-bottom: 35px;
+    }
+  
+  
+  
+}
+
+@media (max-width: 800px){
+  
+  section.pricelist div.wrapblack {
+    height: 65vh;
+    min-height: 580px;
+  }
+  
+  section.pricelist div.wrap {
+    height: 65vh;
+    min-height: 580px;
+  }
+  
+}
+
+
+@media (max-width: 550px) {
+  section.pricelist .row {
+    padding-top: 105px;
+  }
+  
+  div.column p {
+    font-size: 22px;
+    margin-bottom: 40px;
+    
+}
+  
+  section.pricelist .row {
+    margin-left: 15px;
+  }
+  
+  
+  section.pricelist div.wrapblack {
+    height: 65vh;
+    min-height: 530px;
+  }
+  
+  section.pricelist div.wrap {
+    height: 65vh;
+    min-height: 530px;
+  }
+}
+
+
+@media (max-width: 390px) {
+  
+  section.pricelist .row {
+    padding-top: 65px;
+  }
+  
+  div.column p {
+        font-size: 19px;
+        margin-bottom: 35px;
+    }
+  
+  section.pricelist div.wrapblack {
+    min-height: 400px;
+    max-height: 420px;
+   
+}
+
+section.pricelist div.wrap {
+    min-height: 400px;
+    max-height: 420px;
+    
+}
+  
+}
+
+@media (max-width: 340px) {
+  div.column p {
+        font-size: 17px;
+        
+    }
+  
+  
+}
+
+
+/* SECTION BOOKING */
+
+section.booking h1 {
+    width: 100%;
+    display: block;
+    font-size: 38px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin: 18px auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(46, 46, 46);
+}
+
+section.booking div.booking {
+    position: relative;
+    height: 50vh;
+    max-height: 500px;
+    min-height: 450px;
+    background-color: rgb(243, 243, 243);
+    overflow: hidden;
+}
+
+section.booking div.bookingwrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.booking h2 {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Saira Condensed", sans-serif;
+    font-size: 45px;
+    text-transform: uppercase;
+    color: rgb(46, 46, 46);
+    font-weight: 500;
+    text-align: center;
+}
+
+div.booking h2.booksytext {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+div.booking div.booksybtn {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+div.booking div.booksybtn img {
+    width: 200px;
+    margin: 0 auto;
+    border: 4px solid black;
+}
+
+div.booking div.booksybtn:hover img {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+div.booking h2.phonetext {
+    padding-top: 80px;
+}
+
+div.booking p.phonenumber {
+    font-family: "Saira Condensed", sans-serif;
+    font-size: 40px;
+    text-align: center;
+
+}
+
+
+/* RESPONSIVE BOOKING */
+
+
+@media (max-width: 1400px) {
+  section.booking div.booking {
+    min-height: 450px;
+   }
+
+    section.booking h1 {
+        font-size: 34px;
+    }
+
+    div.booking h2 {
+        font-size: 40px;
+    }
+
+    div.booking div.booksybtn {
+        max-width: 200px;
+    }
+
+    div.booking p.phonenumber {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 1060px) {
+    section.booking h1 {
+        margin: 14px auto;
+        font-size: 30px;
+    }
+
+
+    div.booking h2 {
+        font-size: 34px;
+    }
+
+    div.booking p.phonenumber {
+        font-size: 28px;
+    }
+
+    div.booking h2.booksytext {
+        padding-top: 70px;
+
+    }
+}
+
+
+@media (max-width: 930px) and (orientation:landscape) {
+  section.booking div.booking {
+    min-height: 450px;
+}
+  
+  
+}
+
+@media (max-width: 800px) {
+  section.booking div.booking {
+    min-height: 450px;
+}
+}
+
+@media (max-width: 550px) {
+  section.booking div.booking {
+    min-height: 450px;
+}
+  
+}
+
+/* SECTION INFINITI SLIDER */
+
+
+body section.slider {
+    height: 200px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slider .slide-track {
+  display: flex;
+  width: calc(200px * 18);
+  animation: scroll 70s linear infinite;
+}
+
+.slider .slide-track:hover {
+  animation-play-state: paused;
+}
+
+.slider .slide {
+  height: 200px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  
+}
+
+.slider .slide img {
+  width: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  
+  100% {
+    transform: translateX(calc(-250px * 9))
+  }
+}
+
+
+/* RESPONSIVE SLIDER */
+
+@media (max-width: 1060px) {
+  .slider .slide {
+  height: 150px;
+  width: 200px;
+
+}
+  
+  body section.slider {
+    height: 150px;
+    
+}
+  
+}
+
+@media (max-width: 550px) {
+  .slider .slide {
+  height: 120px;
+}
+  
+  body section.slider {
+    height: 120px;  
+}
+}
+
+
+/* FOOTER */
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 80px 0;
+}
+
+.footer-col {
+    width: 50%;
+    padding: 0 60px;
+    text-align: center;
+}
+
+.footer-col h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #ffffff;
+    height: 2px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.footer-col ul li a {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+@media (max-width: 1060px) {
+
+    .footer {
+        padding: 70px 0;
+    }
+
+    .footer-col {
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 550px) {
+  .footer-col {
+        width: 100%;
+        margin-top: 50px;
+    }
+    .footer {
+        padding: 0 0 10px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer-col {
+        margin-top: 40px;
+
+    }
+    .footer {
+        padding: 0 0 20px 0;
+    }
+}
